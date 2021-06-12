@@ -14,12 +14,14 @@ export default function Home() {
         <spotLight position={[10, 10, 5]} />
         <spotLight position={[-10, -10, -5]} />
         <Physics
-          gravity={[0, -30, 0]}
-          defaultContactMaterial={{ restitution: 1.1 }}
+          gravity={[0, -25, 0]}
+          defaultContactMaterial={{ restitution: 0.3 }}
         >
           <Ball />
           <Bat />
-          <Enemy color="orange" position={[-2, -1, 0]} />
+          <Enemy color="orange" position={[-2, -1, 0]} rotation={[0, 0, -3]} />
+          <Enemy color="black" position={[-6, 1, 0]} rotation={[0, 0, -3.3]} />
+          <Enemy color="hotpink" position={[5, -1, 0]} rotation={[0, 0, -3]} />
         </Physics>
       </Canvas>
     </div>

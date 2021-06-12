@@ -3,7 +3,13 @@ import { useThree } from '@react-three/fiber';
 
 export default function Ball() {
   const { viewport } = useThree();
-  const [ref, api] = useSphere(() => ({ args: 0.5, mass: 1 }));
+  const [ref, api] = useSphere(() => ({
+    args: 0.5,
+    mass: 1,
+    onCollide: () => {
+      api.velocity.set(0, 20, 0);
+    },
+  }));
 
   usePlane(() => ({
     position: [0, -viewport.height, 0],
